@@ -134,8 +134,8 @@ section { padding-block: 64px; border-top: 1px solid var(--line); }
 
 /* RIG */
 .rig-intro { color: var(--muted); max-width: 40em; margin: 0 0 24px; }
-.rig { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
-.rig details { background: var(--bg-raised); border: 1px solid var(--line); border-radius: 8px; padding: 0 20px; min-width: 0; }
+.rig { columns: 2; column-gap: 14px; }
+.rig details { background: var(--bg-raised); border: 1px solid var(--line); border-radius: 8px; padding: 0 20px; min-width: 0; break-inside: avoid; margin-bottom: 14px; }
 .rig details[open] { border-color: var(--accent-2); }
 .rig summary { cursor: pointer; list-style: none; font-family: var(--font-display); font-weight: 500; font-size: 15px; padding: 18px 0; display: flex; justify-content: space-between; align-items: center; }
 .rig summary::-webkit-details-marker { display: none; }
@@ -144,7 +144,7 @@ section { padding-block: 64px; border-top: 1px solid var(--line); }
 .rig details p { margin: 0 0 12px; font-size: 15px; color: var(--muted); }
 .rig details ul { margin: 0 0 20px; padding-left: 18px; font-size: 15px; line-height: 1.5; font-family: var(--font-mono); font-size: 13px; }
 .rig details li { margin: 4px 0; }
-@media (max-width: 760px) { .rig { grid-template-columns: 1fr; } }
+@media (max-width: 760px) { .rig { columns: 1; } }
 
 /* LINKS */
 .links { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
@@ -267,7 +267,7 @@ footer a { color: var(--muted); }
           <li>AKG K182 headphones</li>
         </ul>
       </details>
-      <details>
+      <details open>
         <summary>Laser</summary>
         <p>Started with a small DMX laser and beat-synced visuals; the new studio was bigger than it could fill. The 5W is overkill for a home set-up and that is the point. Quickshow is Windows-only, which forced a Mac/PC split in the rig.</p>
         <ul>
@@ -276,7 +276,7 @@ footer a { color: var(--muted); }
           <li>Akai APC Mini (MIDI)</li>
         </ul>
       </details>
-      <details>
+      <details open>
         <summary>Visuals</summary>
         <p>Resolume is what the festival stages use: it locks to the tempo and lets me make slow adjustments live. Clips run on auto shuffle and change every 8, 16 or 32 beats. Video reaches OBS over NDI.</p>
         <ul>
@@ -285,7 +285,7 @@ footer a { color: var(--muted); }
           <li>NDI video over IP</li>
         </ul>
       </details>
-      <details>
+      <details open>
         <summary>Lights and DMX</summary>
         <p>Started with cheap RGB floods and strobes on separate remotes. Now everything, hazer included, is on a DMX chain driven by Lightkey, so whole scenes change from one controller.</p>
         <ul>
@@ -299,7 +299,7 @@ footer a { color: var(--muted); }
           <li>3 × RGB LED floods (floor lighting)</li>
         </ul>
       </details>
-      <details>
+      <details open>
         <summary>Streaming</summary>
         <p>Three cameras into OBS on a dedicated PC. Since the Twitch DJ category stopped allowing recordings, full sets go up on YouTube.</p>
         <ul>
