@@ -137,8 +137,9 @@ section { padding-block: 64px; border-top: 1px solid var(--line); }
 
 /* RIG */
 .rig-intro { color: var(--muted); max-width: 40em; margin: 0 0 24px; }
-.rig { columns: 2; column-gap: 14px; }
-.rig details { background: var(--bg-raised); border: 1px solid var(--line); border-radius: 8px; padding: 0 20px; min-width: 0; break-inside: avoid; margin-bottom: 14px; }
+.rig { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; align-items: start; }
+.rig .col { display: grid; gap: 14px; min-width: 0; }
+.rig details { background: var(--bg-raised); border: 1px solid var(--line); border-radius: 8px; padding: 0 20px; min-width: 0; }
 .rig details[open] { border-color: var(--accent-2); }
 .rig summary { cursor: pointer; list-style: none; font-family: var(--font-display); font-weight: 500; font-size: 15px; padding: 18px 0; display: flex; justify-content: space-between; align-items: center; }
 .rig summary::-webkit-details-marker { display: none; }
@@ -147,7 +148,7 @@ section { padding-block: 64px; border-top: 1px solid var(--line); }
 .rig details p { margin: 0 0 12px; font-size: 15px; color: var(--muted); }
 .rig details ul { margin: 0 0 20px; padding-left: 18px; font-size: 15px; line-height: 1.5; font-family: var(--font-mono); font-size: 13px; }
 .rig details li { margin: 4px 0; }
-@media (max-width: 760px) { .rig { columns: 1; } }
+@media (max-width: 760px) { .rig { grid-template-columns: 1fr; } }
 
 /* LINKS */
 .links { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
@@ -243,6 +244,7 @@ footer a { color: var(--muted); }
     <p class="sec-head">The rig</p>
     <p class="rig-intro">Everything that runs on a Sunday night. Happy to answer questions about any of it on the stream.</p>
     <div class="rig">
+      <div class="col">
       <details open>
         <summary>Audio</summary>
         <p>I spent years on vinyl, moved to Serato and timecode around 2010, and never went to CDJs. The DJ laptop is old and stays on macOS Catalina so it still drives the Rane interface.</p>
@@ -270,15 +272,8 @@ footer a { color: var(--muted); }
           <li>Akai APC Mini (MIDI)</li>
         </ul>
       </details>
-      <details open>
-        <summary>Visuals</summary>
-        <p>Resolume is what the festival stages use: it locks to the tempo and lets me make slow adjustments live. Clips run on auto shuffle and change every 8, 16 or 32 beats. Video reaches OBS over NDI.</p>
-        <ul>
-          <li>Resolume Avenue</li>
-          <li>Akai APC40 (MIDI)</li>
-          <li>NDI video over IP</li>
-        </ul>
-      </details>
+      </div>
+      <div class="col">
       <details open>
         <summary>Lights and DMX</summary>
         <p>Started with cheap RGB floods and strobes on separate remotes. Now everything, hazer included, is on a DMX chain driven by Lightkey, so whole scenes change from one controller.</p>
@@ -294,6 +289,15 @@ footer a { color: var(--muted); }
         </ul>
       </details>
       <details open>
+        <summary>Visuals</summary>
+        <p>Resolume is what the festival stages use: it locks to the tempo and lets me make slow adjustments live. Clips run on auto shuffle and change every 8, 16 or 32 beats. Video reaches OBS over NDI.</p>
+        <ul>
+          <li>Resolume Avenue</li>
+          <li>Akai APC40 (MIDI)</li>
+          <li>NDI video over IP</li>
+        </ul>
+      </details>
+      <details open>
         <summary>Streaming</summary>
         <p>Three cameras into OBS on a dedicated PC. Since the Twitch DJ category stopped allowing recordings, full sets go up on YouTube.</p>
         <ul>
@@ -304,6 +308,7 @@ footer a { color: var(--muted); }
           <li>Elgato Stream Deck XL</li>
         </ul>
       </details>
+      </div>
     </div>
   </section>
 
