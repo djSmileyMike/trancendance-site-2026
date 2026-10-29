@@ -85,8 +85,11 @@ a:focus-visible { outline: 2px solid var(--cool); outline-offset: 3px; }
 }
 .hero h1 span { display: block; font-weight: 300; color: var(--muted); font-size: 0.4em; letter-spacing: 0.02em; margin-top: 12px; }
 @media (max-width: 640px) {
-  .hero img { aspect-ratio: 4 / 3; }
-  .hero .text { padding: 18px; }
+  .hero { overflow: visible; border-radius: 0; }
+  .hero img { aspect-ratio: 16 / 9; border-radius: 10px; }
+  .hero .cover { display: none; }
+  .hero .text { position: static; padding: 22px 0 0; }
+  .hero h1 { text-shadow: none; }
 }
 .lede { max-width: 38em; font-size: 19px; color: var(--muted); margin: 36px 0 0; }
 
