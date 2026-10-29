@@ -17,6 +17,7 @@ img{max-width:100%}
 </style>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Unbounded:wght@300;500;800&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@400;500&display=swap">
 <style>
+@font-face { font-family: "28 Days Later"; src: url("fonts/28DaysLater.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
 /* Layout: one dark column lit like the stream itself – ultraviolet blue base,
    laser magenta accent, strobe cyan for data. The stream block is the one bright object. */
 :root {
@@ -28,6 +29,7 @@ img{max-width:100%}
   --accent: #ff2bd6;        /* laser magenta */
   --accent-2: #7a2bff;      /* ultraviolet */
   --cool: #22e3ff;          /* strobe cyan */
+  --font-mark: "28 Days Later", "Unbounded", "Arial Black", Impact, sans-serif;
   --font-display: "Unbounded", "Arial Black", Impact, sans-serif;
   --font-body: "Instrument Sans", "Helvetica Neue", Arial, sans-serif;
   --font-mono: "JetBrains Mono", "SFMono-Regular", Menlo, monospace;
@@ -159,6 +161,17 @@ section { padding-block: 64px; border-top: 1px solid var(--line); }
 @media (max-width: 760px) { .links { grid-template-columns: repeat(2, 1fr); } }
 @media (max-width: 400px) { .links { grid-template-columns: 1fr; } }
 
+/* 28 DAYS LATER – wordmark, nav, headings, panel titles */
+.nav .brand { font-family: var(--font-mark); font-weight: 400; font-size: 26px; letter-spacing: 0.04em; text-transform: uppercase; }
+.nav ul a { font-family: var(--font-mark); font-size: 17px; letter-spacing: 0.08em; }
+.hero h1 { font-family: var(--font-mark); font-weight: 400; letter-spacing: 0.03em; text-transform: uppercase; line-height: 0.95; }
+.hero h1 span { font-family: var(--font-display); text-transform: none; }
+.sec-head { font-family: var(--font-mark); font-size: 30px; letter-spacing: 0.05em; color: var(--fg); border-bottom: 2px solid var(--line); padding-bottom: 8px; margin-bottom: 28px; }
+.stream h2 { font-family: var(--font-mark); font-weight: 400; letter-spacing: 0.04em; text-transform: uppercase; font-size: clamp(28px, 4.6vw, 42px); }
+.rig summary { font-family: var(--font-mark); font-weight: 400; font-size: 22px; letter-spacing: 0.05em; text-transform: uppercase; }
+.links .name { font-family: var(--font-mark); font-weight: 400; font-size: 22px; letter-spacing: 0.05em; text-transform: uppercase; }
+.stills figcaption { font-family: var(--font-mark); font-size: 16px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); }
+
 /* FOOTER */
 footer { border-top: 1px solid var(--line); padding-block: 32px 48px; font-size: 14px; color: var(--muted); display: flex; flex-wrap: wrap; gap: 12px 32px; justify-content: space-between; }
 footer a { color: var(--muted); }
@@ -273,7 +286,7 @@ footer a { color: var(--muted); }
         </ul>
       </details>
       <details>
-        <summary>Lights &amp; DMX</summary>
+        <summary>Lights and DMX</summary>
         <p>Started with cheap RGB floods and strobes on separate remotes. Now everything, hazer included, is on a DMX chain driven by Lightkey, so whole scenes change from one controller.</p>
         <ul>
           <li>Lightkey (software), MacBook Pro M1 Max</li>
@@ -301,7 +314,7 @@ footer a { color: var(--muted); }
   </section>
 
   <section id="links">
-    <p class="sec-head">Listen · Watch · Follow</p>
+    <p class="sec-head">Listen Watch Follow</p>
     <div class="links">
       <a href="https://www.twitch.tv/djsmileymike">
         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.3 2 2 6.6v14.2h5.2V23h2.8l2.3-2.2h3.7L22 14.6V2H4.3zm15.8 11.7-2.9 2.9h-4.6l-2.3 2.2v-2.2H6.5V4h13.6v9.7zM16.4 7.3h-1.8v5.5h1.8V7.3zm-5 0H9.6v5.5h1.8V7.3z"/></svg>
